@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Reiseplanlegger</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
+		<link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+	</head>
+	<style>
+		.leaflet-routing-container {
+			display: none;
+		}
+	</style>
+	<body class="bg-gray-100">
+		<!-- Navbar -->
+		<nav class="bg-blue-500 p-4">
+			<div class="container mx-auto">
+				<a href="#" class="text-white font-bold">Reiseplanlegger</a>
+			</div>
+		</nav>
+
+		<!-- Routes -->
+		<section class="py-8">
+			<div class="container mx-auto">
+				<h2 class="text-2xl font-bold mb-4">Reiseruter</h2>
+				<ul>
+					<li class="mb-4">
+						<h3 class="text-xl font-semibold">Larvik - Oslo</h3>
+						<p>Følg E18!</p>
+					</li>
+				</ul>
+			</div>
+		</section>
+
+		<!-- Map -->
+		<section class="py-8">
+			<div class="container mx-auto">
+				<h2 class="text-2xl font-bold mb-4">Kart</h2>
+				<div id="map" class="map absolute h-2/3 w-2/4"></div>
+			</div>
+		</section>
+
+		<script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+		<script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.min.js"></script>
+
+		<script>
+			var map = L.map("map").setView([59.9139, 10.7522], 10);
+
+			L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+				attribution: "© OpenStreetMap contributors",
+			}).addTo(map);
+
+			L.Routing.control({
+				waypoints: [L.latLng(59.053775, 10.033798), L.latLng(59.9169, 10.7271)],
+				routeWhileDragging: true,
+			}).addTo(map);
+		</script>
+	</body>
+</html>
