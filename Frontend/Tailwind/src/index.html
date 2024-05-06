@@ -7,44 +7,101 @@
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
 		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
 		<link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+		<link rel="stylesheet" href="/src/style.css" />
 	</head>
-	<style>
-		.leaflet-routing-container {
-			display: none;
-		}
-	</style>
-	<body class="bg-gray-100">
-		<!-- Navbar -->
-		<nav class="bg-blue-500 p-4">
-			<div class="container mx-auto">
-				<a href="#" class="text-white font-bold">Reiseplanlegger</a>
-			</div>
-		</nav>
+	<style></style>
+	<body class="bg-gray-900">
+		<div class="flex flex-col h-screen justify-between">
+			<nav class="bg-blue-900 p-4">
+				<div class="container mx-auto">
+					<a href="#" class="text-white font-bold text-5xl">Reiseplanlegger</a>
+				</div>
+			</nav>
+			<main id="map-container" class="mb-auto h-auto text-white">
+				<!-- Routes -->
+				<section class="py-8">
+					<div class="container mx-auto">
+						<h2 class="text-3xl font-bold mb-4 underline">Reiseruter</h2>
+						<ul>
+							<li class="mb-4">
+								<h3 class="text-2xl font-semibold">Larvik - Oslo</h3>
+								<p class="text-lg">Følg E18!</p>
+							</li>
+						</ul>
+					</div>
+				</section>
 
-		<!-- Routes -->
-		<section class="py-8">
-			<div class="container mx-auto">
-				<h2 class="text-2xl font-bold mb-4">Reiseruter</h2>
-				<ul>
-					<li class="mb-4">
-						<h3 class="text-xl font-semibold">Larvik - Oslo</h3>
-						<p>Følg E18!</p>
-					</li>
-				</ul>
-			</div>
-		</section>
+				<!-- Map -->
+				<section class="py-8">
+					<div class="container mx-auto map-container">
+						<h2 class="text-3xl font-bold mb-4 underline">Kart</h2>
+						<div id="map" class="map absolute h-2/3 w-2/4"></div>
+					</div>
+				</section>
+			</main>
+			<footer class="bg-gray-800 h-10 text-white p-12">
+				<div class="container">
+					<button class="text-white text-4xl mx-auto my-auto" onclick="openModal('form-modal')">Kontakt meg</button>
+				</div>
+			</footer>
+		</div>
 
-		<!-- Map -->
-		<section class="py-8">
-			<div class="container mx-auto">
-				<h2 class="text-2xl font-bold mb-4">Kart</h2>
-				<div id="map" class="map absolute h-2/3 w-2/4"></div>
+		<div id="form-modal" class="hidden fixed inset-0 z-50 overflow-y-auto overflow-x-hidden">
+			<div class="relative bg-white rounded-lg w-96 h-96">
+				<!-- Kryss ut -->
+				<div class="absolute top-0 right-0 p-2">
+					<button
+						onclick="closeModal('form-modal')"
+						type="button"
+						class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg p-1.5"
+					>
+						<!-- X ikon -->
+						<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+							<path
+								fill-rule="evenodd"
+								d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+								clip-rule="evenodd"
+							></path>
+						</svg>
+					</button>
+				</div>
+				<div class="p-4 md:p-5">
+					<form class="space-y-4" action="#">
+						<div>
+							<input
+								type="email"
+								name="email"
+								id="email"
+								class="border border-gray-300 text-sm rounded-lg focus:border-blue-500 block w-full p-2.5"
+								placeholder="your@email.com"
+								required
+							/>
+						</div>
+						<div>
+							<textarea
+								class="resize-none border border-gray-300 text-lg rounded-lg focus:border-blue-500"
+								name="message"
+								rows="8"
+								cols="34"
+								minlength="25"
+								maxlength="272"
+							>
+							</textarea>
+						</div>
+						<button
+							type="submit"
+							class="w-full text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-lg px-5 py-2.5"
+						>
+							Send melding
+						</button>
+					</form>
+				</div>
 			</div>
-		</section>
+		</div>
 
 		<script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
 		<script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.min.js"></script>
-
+		<script src="script.js"></script>
 		<script>
 			var map = L.map("map").setView([59.9139, 10.7522], 10);
 
