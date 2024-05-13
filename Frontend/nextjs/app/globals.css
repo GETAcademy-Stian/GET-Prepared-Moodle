@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.blogPost {
+    @apply flex flex-col gap-3 text-lg tracking-wide mb-20;
+}
+
+.blogPost > h1 {
+    @apply text-4xl text-center tracking-tight;
+}
+
+.blogPost > h2 {
+    @apply text-3xl tracking-tight;
+}
+
+.blogPost > ol {
+    @apply list-decimal flex flex-col mx-10 gap-2;
+}
+
+.blogPost > ul {
+    @apply list-disc flex flex-col mx-10 gap-2;
+}
+
+.blogpost > pre {
+    @apply bg-neutral-950 text-neutral-50 p-5 overflow-scroll;
+}
+
+.blogPost > blockquote {
+    @apply pl-5 italic border-l-2 border-neutral-600 border-opacity-40;
+}
