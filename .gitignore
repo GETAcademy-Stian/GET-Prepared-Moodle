@@ -177,7 +177,6 @@ package-lock.json
 *.css.map
 tsconfig.json
 tailwind.config.ts
-*package.json
 postcss.config.mjs
 next.config.mjs
 next-env.d.ts
