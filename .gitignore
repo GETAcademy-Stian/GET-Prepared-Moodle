@@ -101,6 +101,13 @@ dist
 .cache
 vue.config.js
 
+# Angular
+Frontend/Angular/.angular/cache
+*.editorconfig
+tsconfig.spec.json
+tsconfig.app.json
+*angular.json
+
 # Docusaurus cache and generated files
 .docusaurus
 
@@ -119,11 +126,54 @@ vue.config.js
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
 
+# Compiled output
+/dist
+/tmp
+/out-tsc
+/bazel-out
+
+# Node
+/node_modules
+npm-debug.log
+yarn-error.log
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# Miscellaneous
+/.angular/cache
+.sass-cache/
+/connect.lock
+/coverage
+/libpeerconnection.log
+testem.log
+/typings
+
+# System files
+.DS_Store
+Thumbs.db
+
+
 # Exclude garbage
 package-lock.json
 *.css.map
 tsconfig.json
 tailwind.config.ts
+*package.json
 postcss.config.mjs
 next.config.mjs
 next-env.d.ts
@@ -131,3 +181,5 @@ next-env.d.ts
 babel.config.js
 jsconfig.json
 fav
+*.vscode
+*favicon.ico
