@@ -1,0 +1,11 @@
+<h1>Produktliste</h1>
+<div *ngFor="let product of products">
+  <app-product [product]="product" (add)="addToCart($event)"></app-product>
+  <button (click)="removeProduct(product)">Slett produkt</button>
+</div>
+
+<h1>Handlekurv</h1>
+<div *ngFor="let product of cart">
+  {{ product.name }} - {{ product.price }} NOK
+  <button (click)="removeFromCart(product)">Fjern</button>
+</div>
