@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Dynamic Image Gallery</title>
+		<link rel="stylesheet" href="stylesheet.css" />
+	</head>
+	<body>
+		<div class="gallery">
+			<div class="filters">
+				<button data-filter="all">All</button>
+				<button data-filter="nature">Nature</button>
+				<button data-filter="city">City</button>
+				<button data-filter="portrait">Portrait</button>
+			</div>
+			<div class="images">
+				<img src="images/image1.jpg" data-category="nature" alt="Nature 1" />
+				<img src="images/image2.jpg" data-category="city" alt="City 1" />
+				<img src="images/image3.jpg" data-category="portrait" alt="Portrait 1" />
+				<img src="images/image4.jpg" data-category="nature" alt="Nature 2" />
+			</div>
+		</div>
+
+		<div class="lightbox" style="display: none">
+			<span class="close">&times;</span>
+			<img class="lightbox-content" />
+		</div>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		<script src="script.js"></script>
+	</body>
+</html>
