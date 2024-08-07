@@ -167,6 +167,10 @@ testem.log
 .DS_Store
 Thumbs.db
 
+# WPF
+UI/WPF/bin
+UI/WPF/obj
+
 
 # Exclude garbage
 package-lock.json
@@ -182,4 +186,9 @@ babel.config.js
 jsconfig.json
 fav
 *.vscode
+*.vs
 *favicon.ico
+*.csproj
+*.csproj.user
+AssemblyInfo.cs
+*.sln
