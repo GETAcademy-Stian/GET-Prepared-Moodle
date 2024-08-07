@@ -1,0 +1,16 @@
+{
+	"name": "sqlexpress",
+	"version": "1.0.0",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [],
+	"author": "Stian Sundby",
+	"license": "ISC",
+	"description": "Simpelt CRUD API mot en SQL Express database",
+	"dependencies": {
+		"express": "^4.19.2",
+		"mssql": "^11.0.1"
+	}
+}
